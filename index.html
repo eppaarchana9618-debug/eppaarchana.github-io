@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNTUH R22 Notes | Archana Eppa</title>
+    <style>
+        :root { --primary: #004e92; --secondary: #000428; --accent: #28a745; --text: #2d3436; --preview: #3498db; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: var(--text); line-height: 1.6; }
+        
+        header { 
+            background: linear-gradient(135deg, var(--secondary), var(--primary)); 
+            color: white; padding: 40px 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .creator-tag { 
+            background: rgba(255,255,255,0.2); display: inline-block; 
+            padding: 8px 25px; border-radius: 50px; margin-top: 15px; 
+            border: 1px solid rgba(255,255,255,0.4); font-weight: bold;
+        }
+
+        .main-wrapper { display: flex; max-width: 1200px; margin: 30px auto; gap: 25px; padding: 0 20px; }
+        
+        nav { width: 280px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content; position: sticky; top: 20px; }
+        nav h3 { color: var(--primary); margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; }
+        
+        .nav-btn { 
+            display: block; width: 100%; text-align: left; padding: 12px 15px; border: none; 
+            background: none; cursor: pointer; border-radius: 10px; margin-bottom: 8px; 
+            font-size: 1rem; font-weight: 500; transition: 0.3s;
+        }
+        .nav-btn:hover { background: #f0f7ff; color: var(--primary); }
+        .nav-btn.active { background: var(--primary); color: white; }
+
+        .year-content { display: none; }
+        .year-content.active { display: block; }
+
+        .year-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .year-header { color: var(--primary); border-left: 6px solid var(--accent); padding-left: 15px; margin-bottom: 25px; font-size: 1.5rem; }
+        
+        .subject-container { border-bottom: 1px solid #f1f1f1; padding: 5px 0; }
+        .subject-header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            cursor: pointer; padding: 12px; border-radius: 8px; transition: 0.2s;
+        }
+        .subject-header:hover { background: #f8f9fa; }
+        .subject-name { font-weight: 600; font-size: 1.05rem; color: #333; }
+        .arrow { font-size: 0.7rem; transition: 0.3s; color: #888; }
+
+        .unit-list { 
+            display: none; padding: 15px; background: #fafafa; border-radius: 8px; 
+            margin: 5px 10px 15px 10px; flex-wrap: wrap; gap: 10px; 
+        }
+        .unit-btn { 
+            background: white; color: var(--primary); border: 1px solid var(--primary); 
+            padding: 6px 12px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; 
+            font-weight: bold; transition: 0.3s;
+        }
+        .unit-btn:hover { background: var(--primary); color: white; }
+
+        footer { text-align: center; padding: 40px; color: #888; margin-top: 50px; border-top: 1px solid #eee; }
+
+        @media (max-width: 800px) { .main-wrapper { flex-direction: column; } nav { width: auto; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>JNTUH B.Tech Notes Hub</h1>
+    <div class="creator-tag">Developed by: ARCHANA EPPA</div>
+</header>
+
+<div class="main-wrapper">
+    <nav>
+        <h3>Select Year</h3>
+        <button class="nav-btn active" onclick="showYear('year1', this)">1st Year (R22)</button>
+        <button class="nav-btn" onclick="showYear('year2', this)">2nd Year (R22)</button>
+        <button class="nav-btn" onclick="showYear('year3', this)">3rd Year (R22)</button>
+        <button class="nav-btn" onclick="showYear('year4', this)">4th Year (R22)</button>
+    </nav>
+
+    <div class="content">
+        
+        <div id="year1" class="year-content active">
+            <div class="year-card">
+                <h2 class="year-header">1st Year Subjects</h2>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Matrices and Calculus (M1)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1qkML1Z6uV4Gh9CSeQnM057jgfyZ6sECC/view?usp=sharing" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1B8xyTneFgQwzL4QEvKXDNGmsKt_zduW5/view?usp=sharing" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1Rd9syovAPavBokE144kK7AfSAwCvhLKk/view?usp=sharing" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1v0V2VxVaj_ZdJ3MoWM8sxRVF_qORt1Et/view?usp=sharing" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Applied Physics (AP)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1o6indzlEPoTMjhWBbeOOxok8mqDNkcg9/view?usp=sharing" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1jc-dvMBH5iV55jYcRatGVlp6ipt1pFjW/view?usp=sharing" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/15h1MROZ-lCcbNgV6dB0e9clOMnNqmllt/view?usp=sharing" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1qCrlOVCIEbYmwzS0-PD9jJMnBAhM6pHi/view?usp=sharing" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">ODE & Vector Calculus (ODE&VC)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1WsWp8vfVBRQAeAOwjHaIdyoq-C96tZTa/view?usp=sharing" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1JAsJuqNGaTkH0e1DOKZJxWqQX1whJFuA/view?usp=sharing" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1sCIuqkia1mj4n0djWYP6-9myiDpZc-hj/view?usp=sharing" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1tuA_38tZudheE_6uA_b-RBlhe07FtOlC/view?usp=sharing" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1tZPDzpNXem4SGfpJYHOxlL7X8M0TgNUV/view?usp=sharing" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">BEE</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1K_WHzimZbP-7PC2-rlvXoDQYoIvP-C2r/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Electronic Devices & Circuits (EDC)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1mYF9D16rPxNK_YGerXOmBfmFBSkSosI8/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1C2vcuZ0iX6ST_v_urUSaZ7rMzhLqLub3/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1nzLfcYhxVBbHvk-Shu3DKjiNMh9z9B-v/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1NNXobTHU-8w1XYNJisjwBLBzKp_yYrxz/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1L1sNoJxgsO4x9b-7_iwoZYWJgO7PcxlR/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Engineering Chemistry (EC)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1oj2HvOm24SHZqg9Lp5iS2gKHT_jjBTUd/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/11jS2ntwCdyggPixx0mSr5u6x41AQItJt/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/16OjSoyzdYCAmIM-A1xmfbOdU6e2rhaHe/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/14yfG_FJ4QkP2GkELmCAKUcABT3h6hxgG/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/15rVsI3bklV2B6JQ-_8kof0fpKDHZVScI/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">CAEG</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1jSXhe5Wgb0RykKKtvFrZlbsRaJh5DKM-/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+<div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Programming For Problem Solving(PPS)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1K6Zcki1PU0xHB5ekcCViAsxdlx47TMxs/view?usp=sharing" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/12jYR8gyez4zCukSzgXzcbcLDTd4CFqm5/view?usp=sharing" target="_blank" class="unit-btn">Unit 2</a><a href="https://docs.google.com/document/d/1UpuNkHzbJBlVgnOIOrPJyfdzkyWCuvec/edit?usp=sharing&ouid=115266484678904578361&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 3</a><a href="https://docs.google.com/document/d/1m2_fumF3tJxjVT3sQDv4yWHLycrZI59Y/edit?usp=sharing&ouid=115266484678904578361&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 4</a><a href="https://docs.google.com/document/d/1TtEgzCgQFiTFjmVv3csEv6gEwXZqvUFY/edit?usp=sharing&ouid=115266484678904578361&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 5</a></div></div>
+            
+            </div>
+        </div>
+
+        <div id="year2" class="year-content">
+            <div class="year-card">
+                <h2 class="year-header">2nd Year Subjects</h2>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Data Structures (DS)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/19JXj-zQ5jC4bwku9P9NqvkhZDHWe47e1/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1CKWrOp2oXcAd_gM13XjjgJlaLgmFugM7/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1XTEHmvdE0178Ih-nPsnURGTSCF21d4-v/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1s7Abym72nwnhyOq62jZYQ3M3YDAvSJaM/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/139fy-aoY3zXV4m76ATm3aaBqnBwc-ird/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div 
+ class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">Java Programming</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1gep7JzWFvyhGMR_VeAYnNRAJsUvDrlcg/view?usp=drivesdk target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+                               <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">COA</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1mKxH6Zv8KjjaEU1X_ffikv3-4cQOujB4/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1xE1IWx01B3WLDqClpLCJSng9kn04_fXg/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1m1wjc3S9luPhLBtaMZHslU-hPYItqbnK/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1epowI4iOJEOHywfGGCwd2jCSnuOFSuxh/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1QXglrSw7IZ0AXwqJc9xj-wFjPX4QZR2y/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+</div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Digital Electronics (DE)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1NlfPlB2s-5f3ID9Oy_M-AZdXp5YybU2K/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1U0_FNEORS1Qg2-85a65UQDa-hqrPiNBz/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1QvcTP0U7QtAmMHrQ5-TjFDmFP9_HMRWn/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1AuS2FS7tIX-g9kI0RyFxCVw-xmomJE6n/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1Ibr2p6e60a2AmNEu9keGk64WY9kdtw64/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Math. & Stat. Foundations (MSF)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1_jOggwyQ0a-k7w7JmdgzS3SBqGrFJT0D/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1cHEcD1DeJRvQEUJa-R_wpjijcS7T0vK2/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1mv1u4PM4_GD6fksswQ9E2GpavYPM-Jao/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1rDQUXVaNkWo_rZO1iDgi9c4NxKNMdd_p/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1j7vms5ObWEGqWHJWW30iyCc-QePodxH5/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Artificial Intelligence (AI)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1xb3lRkrJzaDDm-ERJK4kD6nvbyRMOoKh/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1ZEcUI1EFfuNdOAVaUMTyG0hs7Dvi7UZ3/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1w2yyuMPWOUGxpgShnlmxUp7Kb6l02oSx/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1ccul-XHfPs8scpukM2C-D0x-GyL7lBOJ/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1S7Atbbg6D83CSx0Nca9ltgCXwVI4zu64/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">DBMS</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1JzNP9euK0X88uOvqZpP_BNbvRS01a7ij/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/111b9C-UYzvwdbvEh2SuOp_0udJ6f4W1b/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1pJyQYdrc2B6DM7usmutJ2_h-6HIG8llG/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1-NFeGtrZ_0ZGfmf6mbh0yArabRZGxKa1/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1zACk441lVPwhy-9zfEmjKL8G6vBLfghs/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Discrete Mathematics (DM)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1ZBwkzG2bhtDJNd43RHoC8Tkdjz64aXRe/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1gu82ruLb-DF3RmynR3yXJiTuAjlogfeU/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1-m3AMZywbZseY8FxISQjpbzf4GJfYt3n/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1CgSyjYJtrWEpXRFEV4_FkqB7r6OdXoJ2/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1C7lMQVAlPPJKen9QUjn2E9w5YgeFkSnw/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div 
+ class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">SOFTWARE ENGINEERING(SE)</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1LFsPYJc_gP3QGywxqn4DIOQU-ySvGOeE/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">BEFA</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1Df2U5sILTviwNPNHUdmRBcHi6mjC7qNn/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1jUkMG_IzoDELEulLqvHD-TxmOD5ELdes/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1PmK7cF0tL4a3mchIlz5LxfvK7Pn4p8u9/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1PtwaX5d4bBrm3Hq3WpgNY2MD7hdO-RKR/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/17YgfeMeRCJCUBIrMHDgY6fZ3xGuiKsYe/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div 
+ class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">COSM</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/15DsX9BYOU-Mb3PKhObBIJ76qZ0sjCE8l/view?usp=drivesdk target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+            <div
+class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">OS</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1AeItelHJPdYyJmGZOiFDga4D3ADNy-jG/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1MWedZ9DBpEg_vCGjbNKfaqJCjBdMl9dI/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1Gzy9XMocGTo9KXFNk_qi6viGnxqv7t1a/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/14Cgermz28kdZXoaT9xn7CrWKrgiQ-nep/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1P9Bq_dk4SVYptMgXJrlaV6sSsksfywkz/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+          </div>
+             </div>
+
+        <div id="year3" class="year-content">
+            <div class="year-card">
+                <h2 class="year-header">3rd Year Subjects</h2>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">DevOps</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1j3QoaVdVlrDiET7BWqNSXmiAKSVhwfvC/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1epxd37de2OhlcQF2Ezlja2fgJktcVVX6/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1nzsIO7kf9rB0j_nYClHql0SlpxY0XIF5/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1OT47EiYlvQdis78fU3R2rFcoabaCZFSa/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1y_smd85PLx46tgBIsGmQ8AOImG8Z1CPf/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">BEFA</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1ot9mUcOXHzriGewXjW9hE3Pu_b-y5kJQ/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1ot9mUcOXHzriGewXjW9hE3Pu_b-y5kJQ/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/126ZrnduM9bR3Ow_MPMcQ5zRWm-SmqWGR/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1HYv9AGMBJy6_pKfM5V-ayAYeq2I7QM9N/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1IyCpe3NcZhiLkYkoY3FhSwL1gRDQrMOI/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div 
+                <div class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">FLAT</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1Nu674m2G6jpCyoKwLa627kfXXnCE7Wbk/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Design & Analysis of Algorithms (DAA)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1JWXHhm_hZkPacFwb3mh27Wol1LfS7MCO/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1ZwLEKL1M36MWD8upiJ22ebm1SqXoCksD/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1DH3Nmr8tPh9cuNqOdw8hrZS2cnfWjGwb/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1kiqAAORNcvVuGmI2MBFEyaqZWZSdu8Pj/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1MTjKNaoCaAGwJapZuS54kMu1CT52Jik9/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">NLP</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1Zpdqa8bOkOULpQIU0HsS5PDmpDeW6T1W/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://docs.google.com/presentation/d/1WQMhXZlrnkdIWA0zuwWcvublyjEcyS_a/edit?usp=drivesdk&ouid=116112582324672411524&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 2</a><a href="https://docs.google.com/presentation/d/1uaU__-vICdD5C3WP5_Ur3hr6rSJG5DZ-/edit?usp=drivesdk&ouid=116112582324672411524&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1DwFcuHoobHsZKRB7OfaxtaiWtLZJmUZ7/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1PSYTmiqCLtDdmBmL8XdRRTsUN07g7rxg/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">FLOT</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1HS-ncIBdOz4n7aNbzFZU0tl-xmZ7yxWV/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1ZyrqBRpjLhY-0n_csjFz9yMkJpk_gyuK/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1yR0f2-z_H_0Lg0ZfP4Djb_E6Tkqn5V-g/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1Vz2dsGmLNScDUSH2qcuzCmgCfNYkbRsD/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">IRS</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1dxPPddwx1MKCN_CdIrksP4gRvZinMS1v/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1wZBSj_jlX7uVdFluItOIORHISofUfH27/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1i-aTo7knmoOgE2uwKtQ-gU_qduPq42lf/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1QK7QcbYEgZfdqK55OfGDFm4JV-dO_776/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/14TvTY72Rgt4JjTmmU-PjnG_k1y3UvofU/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Computer Networks (CN)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1V_8fG40EvGwKrXVFvPeE6oHpOoOWh0AB/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1ch7YMz-tuH_to0x7T1PszJjCRuRo5i3J/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1-8JhR6tUS9lN30AxYLPrmjd5BoMnkuss/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1XP2LwJ_igiG52d_NbxcA9Ok-AFRIfkAe/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1PgkR8xY0c2615Vk-PoKvJDDkrwVDQyIa/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Software Testing (STM)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1y9sPKWKokhO9xC5gmaeYumeteaMPTcSl/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1jAaK5dLw6JEOTRr_2NJ53lApjjmMiEXo/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1gKj4A1JzgfSrrM6njptL1VwG-AkLTk0P/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1n7Zohb3_iJCmF76hCSyjv5RXX5Vtvn0L/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1ix2oouHf6z9LbV5z2DkKdfpYovEIXBE3/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Intrusion Detection Systems (IDS)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/1xs4JeEcwCQ9GMt2f2L0PZZWP_-kje-mS/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://docs.google.com/document/d/1nOJbhoWZj48M6LeAClVvtF2me9eIrEly/edit?usp=drivesdk&ouid=116112582324672411524&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 2</a><a href="https://docs.google.com/document/d/1R4ooRzJpMPAta4-mvA5CkxOGM6glrhko/edit?usp=drivesdk&ouid=116112582324672411524&rtpof=true&sd=true" target="_blank" class="unit-btn">Unit 3</a><a href="https://drive.google.com/file/d/1GvrC2imjHYNUwisXizI4jBJq2SnjM7RS/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a </div></div>
+                <div 
+ class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">DA</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/14zP8cJVVhQ9ujh6zgtFRYCtDPt6cI8Ua/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+<div class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">AI</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1DfDrKV9N_-OrdszSLMQav-hIn4TKxt0V/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">PPL</span><span class="arrow">▼</span></div><div class="unit-list"><a href="https://drive.google.com/file/d/140IrcDjNSPC9R3BEYnV9WFlDLKcZc0rK/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a><a href="https://drive.google.com/file/d/1160e3h2v_G3qlgSCTA3qwwOzr2NYRJk3/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2</a><a href="https://drive.google.com/file/d/1WNyc6gGDGtST7g_ITBG5GZiPPLrAZxkl/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a><a href="https://drive.google.com/file/d/1eBwzivXv2NMQZM8v0avNtEXuIRj_nx54/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div 
+ class="subject-container">
+    <div class="subject-header" onclick="toggleUnits(this)">
+        <span class="subject-name">ML</span>
+        <span class="arrow">▼</span>
+    </div>
+    <div class="unit-list">
+        <a href="https://drive.google.com/file/d/1a4MX_IJPYM6WiTMMPl6I9Ery30_g9LP1/view?usp=drivesdk" target="_blank" class="unit-btn" style="width: 100%;">Complete Course Notes (Units 1-5)</a>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="year4" class="year-content">
+            <div class="year-card">
+                <h2 class="year-header">4th Year Subjects</h2>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Cloud Computing (CC)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">SPPM</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Compiler Design (CD)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Industrial Eng. & Management (IEM)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Crypto. & Network Security (CNS)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Mobile Computing (MC)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Organizational Behavior (OB)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">SMS</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Entrepreneurship (ED)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">NIC</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+                <div class="subject-container"><div class="subject-header" onclick="toggleUnits(this)"><span class="subject-name">Distributed Systems (DS)</span><span class="arrow">▼</span></div><div class="unit-list"><a href="#" target="_blank" class="unit-btn">Unit 1</a><a href="#" target="_blank" class="unit-btn">Unit 2</a><a href="#" target="_blank" class="unit-btn">Unit 3</a><a href="#" target="_blank" class="unit-btn">Unit 4</a><a href="#" target="_blank" class="unit-btn">Unit 5</a></div></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function showYear(yearId, btn) {
+        var contents = document.getElementsByClassName('year-content');
+        for (var i = 0; i < contents.length; i++) { contents[i].classList.remove('active'); }
+        var btns = document.getElementsByClassName('nav-btn');
+        for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
+        document.getElementById(yearId).classList.add('active');
+        btn.classList.add('active');
+    }
+
+    function toggleUnits(element) {
+        var list = element.nextElementSibling;
+        var arrow = element.querySelector('.arrow');
+        if (list.style.display === "flex") {
+            list.style.display = "none";
+            arrow.style.transform = "rotate(0deg)";
+        } else {
+            list.style.display = "flex";
+            arrow.style.transform = "rotate(180deg)";
+        }
+    }
+</script>
+
+<footer>
+    &copy; 2026 JNTUH Study Hub | Designed by Archana Eppa
+</footer>
+
+</body>
+</html>
